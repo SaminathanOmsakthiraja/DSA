@@ -16,6 +16,7 @@ public class MissingnuminArray {
             for (int j = 0; j < arr.length; j++) {
                 if ((i+1)==arr[j]){
                     found = true;
+                    break;
                 }
             }
             if (!found)
