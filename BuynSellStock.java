@@ -10,7 +10,7 @@ public class BuynSellStock {
             arr[i] = sc.nextInt();
         }
         int min_price = Integer.MAX_VALUE;
-        int max_profit = Integer.MIN_VALUE;
+        int max_profit = 0;
         for (int i = 0; i < n; i++){
             int profit = 0;
             if (arr[i] < min_price)
@@ -22,7 +22,7 @@ public class BuynSellStock {
                 max_profit = profit;
         }
 
-        System.out.println("");
+        System.out.println(max_profit);
         
         sc.close();
     }
