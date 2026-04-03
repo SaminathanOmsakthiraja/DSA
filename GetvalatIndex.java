@@ -12,6 +12,7 @@ public class GetvalatIndex {
         for (int i = st; i < end; i++){
             System.out.print(arr.get(i) + " ");
         }
-    }
-    
+
+        sc.close();
+    }   
 }
