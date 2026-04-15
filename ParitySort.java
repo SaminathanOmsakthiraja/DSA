@@ -1,0 +1,12 @@
+public class ParitySort {
+    public int[] sortArrayByParity(int[] nums) {
+        int left = 0;
+        int right = nums.length-1;
+        int[] sort = new int[nums.length];
+        for (int i = 0; i < nums.length; i++){
+            if (nums[i] % 2 == 0) sort[left++] = nums[i];
+            else sort[right--] = nums[i];
+        } 
+        return sort;
+    }
+}    
