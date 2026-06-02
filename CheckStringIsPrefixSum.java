@@ -1,4 +1,4 @@
-class Solution {
+class CheckStringsIsPrefixSum {
     public boolean isPrefixString(String s, String[] words) {
         String str = "";
         for (int i = 0; i < words.length; i++){
