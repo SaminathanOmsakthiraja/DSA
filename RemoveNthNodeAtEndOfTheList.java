@@ -11,25 +11,21 @@ class ListNode {
 
 public class RemoveNthNodeAtEndOfTheList {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        List<Integer> lst = new ArrayList<>();
-        ListNode cur = head;
-        while (cur != null){
-            lst.add(cur.val);
+        ListNode dup = new ListNode();
+        dup.next = head;
+        ListNode cur = dup;
+        int len = 0;
+        while(cur.next != null){
+            len++;
             cur = cur.next;
         }
-        Collections.reverse(lst);
-        lst.remove(n-1);
-        if (lst.size() <= 0){
-            return null;
-        }
-        ListNode dup = new ListNode();
-        dup.val = lst.get(lst.size()-1);
+        int idx = len - n;
         ListNode curr = dup;
-        for (int i = lst.size()-2; i >= 0; i--){
-            ListNode newNode = new ListNode(lst.get(i));
-            curr.next = newNode;
+        while(idx != 0){
             curr = curr.next;
+            idx--;
         }
-        return dup;
+        curr.next = curr.next.next;
+        return dup.next;
     }
 }
